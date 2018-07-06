@@ -130,15 +130,19 @@ class UserController extends Controller
         $course = Course::where('user_id','=',$id)->first();
 
 
-           $course->user_id=null;
-           $course->save();
+           if($course!= null && $course->user_id != null) {
+               $course->user_id = null;
+               $course->save();
+           }
 
         $user = User::where('id','=',$id)->first();
         $user->name=$request->name;
         $user->email=$request->email;
 
         $course = Course::where('name','=',$c)->first();
-
+        if($course==null){
+            return 'please enter a valid course';
+        }
         $course->user_id=$id;
         $user->save();
         $course->save();

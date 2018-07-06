@@ -14,6 +14,10 @@
                         </div>
                     @endif
                         {{Auth::user()->role?"This is System Admin : ".Auth::user()->name :"This is Course Admin : ".Auth::user()->name}}
+                        <span class="help-block">
+                            Status :
+                                        <strong>{{ Auth::user()!=null && Auth::user()->verified()?"Account Activated":'Please Verify Your Email' }}</strong>
+                        </span>
 
 
                 </div>

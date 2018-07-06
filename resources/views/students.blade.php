@@ -5,7 +5,7 @@
         <div class="alert alert-info">{{ Session::get('message') }}</div>
     @endif
     <table class="table">
-        <a href="{{ URL::to('users/create') }}">
+        <a href="{{ URL::to('students/create') }}">
             <button type="button" class="btn bg-primary">Add Student</button>
         </a>&nbsp;
         <thead class="thead-dark">

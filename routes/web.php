@@ -45,4 +45,6 @@ Route::group(['middleware'=>'auth'],function () {
 
 
 });
+Route::get('/verify/{token}','VerifyController@verify')->name('verify');
+
 
